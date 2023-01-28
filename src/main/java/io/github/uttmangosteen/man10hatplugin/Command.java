@@ -13,12 +13,17 @@ public class Command implements CommandExecutor {
             return true;
         }
         Player player = (Player) sender;
-        ItemStack hand = player.getInventory().getItemInMainHand();
-        ItemStack helmet = player.getInventory().getHelmet();
-        player.getInventory().setItemInMainHand(helmet);
-        player.getInventory().setHelmet(hand);
-        player.updateInventory();
-        player.sendMessage("§f§l[§d§lm§a§lhat§f§l]§d頭にかぶりました§f");
-        return true;
+        if(player.hasPermission("red.man10.mhat")){
+            ItemStack hand = player.getInventory().getItemInMainHand();
+            ItemStack helmet = player.getInventory().getHelmet();
+            player.getInventory().setItemInMainHand(helmet);
+            player.getInventory().setHelmet(hand);
+            player.updateInventory();
+            player.sendMessage("§f§l[§d§lm§a§lhat§f§l]§d頭にかぶりました§f");
+            return true;
+        } else {
+            player.sendMessage("§f§l[§d§lm§a§lhat§f§l]§dあなたは権限を持っていません§f");
+            return true;
+        }
     }
 }
