@@ -18,6 +18,7 @@ public class Command implements CommandExecutor {
         player.getInventory().setItemInMainHand(helmet);
         player.getInventory().setHelmet(hand);
         player.updateInventory();
+        player.sendMessage("§f§l[§d§lm§a§lhat§f§l]§d頭にかぶりました§f");
         return true;
     }
 }

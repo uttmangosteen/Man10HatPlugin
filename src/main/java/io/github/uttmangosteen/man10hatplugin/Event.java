@@ -20,6 +20,7 @@ public class Event implements Listener {
             player.setItemOnCursor(head);
             player.getInventory().setHelmet(cursor);
             e.setCancelled(true);
+            player.sendMessage("§f§l[§d§lm§a§lhat§f§l]§d頭にかぶりました§f");
         }
     }
 }
