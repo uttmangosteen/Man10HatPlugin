@@ -8,14 +8,8 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.scheduler.BukkitRunnable;
 
 public class Event implements Listener {
-    private final Main plugin;
-
-    public Event(Main plugin) {
-        this.plugin = plugin;
-    }
 
     @EventHandler
     public void onClickHead(InventoryClickEvent e) {
@@ -23,13 +17,9 @@ public class Event implements Listener {
             Player player = (Player) e.getWhoClicked();
             ItemStack cursor = player.getItemOnCursor();
             ItemStack head = player.getInventory().getHelmet();
-            new BukkitRunnable(){
-                @Override
-                public void run() {
-                    player.setItemOnCursor(head);
-                    player.getInventory().setHelmet(cursor);
-                }
-            }.runTaskLater(plugin, 0);
+            player.setItemOnCursor(head);
+            player.getInventory().setHelmet(cursor);
+            e.setCancelled(true);
         }
     }
 }
