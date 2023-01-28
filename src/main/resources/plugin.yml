@@ -1,0 +1,11 @@
+name: Man10HatPlugin
+version: '${project.version}'
+main: io.github.uttmangosteen.man10hatplugin.Main
+api-version: 1.17
+prefix: Man10HatPlugin
+authors: [ Underthetree ]
+description: 全てのアイテムをかぶれるようにするプラグイン
+
+commands:
+  mhat:
+    description: 手に持っているアイテムを頭に被る
