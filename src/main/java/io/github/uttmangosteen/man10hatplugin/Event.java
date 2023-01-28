@@ -29,7 +29,7 @@ public class Event implements Listener {
                     player.setItemOnCursor(head);
                     player.getInventory().setHelmet(cursor);
                 }
-            }.runTaskLater(plugin, 1L);
+            }.runTaskLater(plugin, 0);
         }
     }
 }
