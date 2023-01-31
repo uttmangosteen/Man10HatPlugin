@@ -9,3 +9,6 @@ description: 全てのアイテムをかぶれるようにするプラグイン
 commands:
   mhat:
     description: 手に持っているアイテムを頭に被る
+permissions:
+  red.man10.mhat:
+    default: op

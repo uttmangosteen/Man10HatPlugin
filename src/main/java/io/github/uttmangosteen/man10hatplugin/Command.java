@@ -20,10 +20,9 @@ public class Command implements CommandExecutor {
             player.getInventory().setHelmet(hand);
             player.updateInventory();
             player.sendMessage("§f§l[§d§lm§a§lhat§f§l]§d頭にかぶりました§f");
-            return true;
         } else {
             player.sendMessage("§f§l[§d§lm§a§lhat§f§l]§dあなたは権限を持っていません§f");
-            return true;
         }
+        return true;
     }
 }
