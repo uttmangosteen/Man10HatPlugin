@@ -13,7 +13,10 @@ public class Event implements Listener {
 
     @EventHandler
     public void onClickHead(InventoryClickEvent e) {
-        if (e.getSlotType() == InventoryType.SlotType.ARMOR && e.getRawSlot() == 5 && e.getWhoClicked().getItemOnCursor().getType() != Material.AIR && e.getWhoClicked().getItemOnCursor().getType().getEquipmentSlot() != EquipmentSlot.HEAD){
+        if (e.getSlotType() == InventoryType.SlotType.ARMOR
+                && e.getRawSlot() == 5
+                && e.getWhoClicked().getItemOnCursor().getType() != Material.AIR
+                && e.getWhoClicked().getItemOnCursor().getType().getEquipmentSlot() != EquipmentSlot.HEAD){
             Player player = (Player) e.getWhoClicked();
             if(player.hasPermission("red.man10.mhat")){
                 ItemStack cursor = player.getItemOnCursor();
