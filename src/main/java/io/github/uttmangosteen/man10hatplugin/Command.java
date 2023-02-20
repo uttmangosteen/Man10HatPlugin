@@ -4,12 +4,13 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 public class Command implements CommandExecutor {
     @Override
-    public boolean onCommand(CommandSender sender, org.bukkit.command.Command command, String alias, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, org.bukkit.command.@NotNull Command command, @NotNull String alias, String[] args) {
         if(!(sender instanceof Player)){
-            sender.sendMessage("プレイヤーでないと実行できません");
+            sender.sendMessage("§4プレイヤーでないと実行できません");
             return true;
         }
         Player player = (Player) sender;
@@ -19,9 +20,9 @@ public class Command implements CommandExecutor {
             player.getInventory().setItemInMainHand(helmet);
             player.getInventory().setHelmet(hand);
             player.updateInventory();
-            player.sendMessage("§f§l[§d§lm§a§lhat§f§l]§d頭にかぶりました§f");
+            player.sendMessage("§f§l[§d§lm§a§lhat§f§l]§a頭にかぶりました§f");
         } else {
-            player.sendMessage("§f§l[§d§lm§a§lhat§f§l]§dあなたは権限を持っていません§f");
+            player.sendMessage("§f§l[§d§lm§a§lhat§f§l]§4あなたは権限を持っていません§f");
         }
         return true;
     }

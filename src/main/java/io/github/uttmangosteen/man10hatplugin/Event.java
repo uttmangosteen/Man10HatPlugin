@@ -10,7 +10,6 @@ import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 
 public class Event implements Listener {
-
     @EventHandler
     public void onClickHead(InventoryClickEvent e) {
         if (e.getSlotType() == InventoryType.SlotType.ARMOR
@@ -24,9 +23,9 @@ public class Event implements Listener {
                 player.setItemOnCursor(head);
                 player.getInventory().setHelmet(cursor);
                 e.setCancelled(true);
-                player.sendMessage("§f§l[§d§lm§a§lhat§f§l]§d頭にかぶりました§f");
+                player.sendMessage("§f§l[§d§lm§a§lhat§f§l]§a頭にかぶりました§f");
             } else {
-                player.sendMessage("§f§l[§d§lm§a§lhat§f§l]§dあなたは権限を持っていません§f");
+                player.sendMessage("§f§l[§d§lm§a§lhat§f§l]§4あなたは権限を持っていません§f");
             }
         }
     }
