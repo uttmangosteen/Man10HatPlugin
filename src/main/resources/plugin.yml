@@ -1,7 +1,7 @@
 name: Man10HatPlugin
 version: '${project.version}'
 main: io.github.uttmangosteen.man10hatplugin.Main
-api-version: 1.17
+api-version: 1.20
 prefix: Man10HatPlugin
 authors: [ Underthetree ]
 description: 全てのアイテムをかぶれるようにするプラグイン
